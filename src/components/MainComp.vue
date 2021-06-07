@@ -2,9 +2,7 @@
 
   <main>
     <div class="container">
-
       <h1>{{titles[type]}}</h1>
-
 
       <div  v-for="movie in movies"
             :key="movie.id"
@@ -14,10 +12,21 @@
         <h5>{{movie.original_language}}</h5>
         <h5>{{movie.vote_average}}</h5>
 
-        
       </div>
 
-      
+      <div class="container">
+
+        <div  v-for="serie in series"
+              :key="serie.id"
+              class="card">
+          <h4>{{serie.name}}</h4>
+          <h4>{{serie.original_name}}</h4>
+          <h5>{{serie.original_language}}</h5>
+          <h5>{{serie.vote_average}}</h5>
+
+        </div>
+
+      </div>
 
     </div>
   </main>
@@ -56,7 +65,6 @@ export default {
       margin-top: 30px;
       .card{
         width: 200px;
-        height: 300px;
         border: solid 1px rgb(232, 232, 232);
         margin: 20px;
         border-radius: 5px;
@@ -69,12 +77,10 @@ export default {
         &:hover{
         -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
         box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-        
         }
         h5{
          text-transform: uppercase;
         }
-        
       }
     }
   }

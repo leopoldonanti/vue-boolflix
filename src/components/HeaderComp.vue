@@ -13,7 +13,8 @@
     <div class="search-frame">
 
       <input v-model="textToSearch"
-             type="text">
+             type="text"
+             placeholder="cerca un film o una serie tv">
 
       <button @click="$emit('startSearc',{text:textToSearch, type:'all'})">
         CERCA</button>
@@ -74,16 +75,23 @@ header{
   padding: 10px 15px 10px 15px;
   border-radius: 20px;
   outline: none;
-  border: none;
-  color: rgb(233, 0, 0);
   font-family: 'roboto';
-  text-align: center;
+  text-align: left;
   font-size: 13px;
   letter-spacing: 0.5px;
   cursor: pointer;
 }
-.search-frame button:active{
-  background-color: rgb(201, 201, 201);
-}
+  button{
+    border: solid 1px white;
+    color: white;
+    background: transparent;
+    &:active{
+    background-color: rgb(220, 27, 40);
+    border: solid 1px rgb(220, 27, 40);
+    }
+  }
+  input{
+    border: none;
+  }
 
 </style>
